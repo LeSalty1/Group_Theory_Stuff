@@ -9,16 +9,16 @@ def ints_mod(n):
 
     # The formatting to make the table more readable: 
     col_width, operation = 2, "+"
-    header = f"{operation:^{col_width}} | " + " ".join(f"{element:^{col_width}}" for element in range(n)) 
-    # ^ Initializes the header row as "+ | [elements in Z_n]" with spacing defined via col_width (center-aligned). 
+    header = f"{operation:>{col_width}} | " + " ".join(f"{element:>{col_width}}" for element in range(n)) 
+    # ^ Initializes the header row as "+ | [elements in Z_n]" with spacing defined via col_width (right-aligned). 
     separate = "-" * len(header)
     print(header)
     print(separate)
 
     for i, row_label in enumerate(range(n)): 
-        row_str = " ".join(f"{val:^{col_width}}" for val in cayley[i]) 
-        # ^ Initializes the rows of the Cayley table as "[element] | [result after operation]" with spacing defined via col_width (center-aligned). 
-        print(f"{row_label:^{col_width}} | {row_str}")
+        row_str = " ".join(f"{val:>{col_width}}" for val in cayley[i]) 
+        # ^ Initializes the rows of the Cayley table as "[element] | [result after operation]" with spacing defined via col_width (right-aligned). 
+        print(f"{row_label:>{col_width}} | {row_str}")
 
 # Below code only necessary when testing function, feel free to remove in your own implentations. 
 while True: 
