@@ -1,6 +1,13 @@
 import numpy as np 
+import pandas as pd
 
-def ints_mod(n): 
+# Use this function if you want the Cayley table printed in your terminal. 
+def ints_mod_print(n): 
+    if type(n) is not int: 
+        raise TypeError(f"{n} is not a valid input. Inputs must be integers.")
+    elif n <= 0: 
+        raise ValueError(f"{n} is not a valid input. Inputs must be positive integers.")
+    
     # The math of the Cayley table: 
     cayley = np.ones((n, n), dtype = int)
     for row_ent in range(n): 
@@ -20,14 +27,20 @@ def ints_mod(n):
         # ^ Initializes the rows of the Cayley table as "[element] | [result after operation]" with spacing defined via col_width (right-aligned). 
         print(f"{row_label:>{col_width}} | {row_str}")
 
-# Below code only necessary when testing function, feel free to remove in your own implentations. 
-while True: 
-    mod_order = input("Enter the order for the integer modulo n group you wish to represent: ")
-    try: 
-        int(mod_order)
-        break 
-    except ValueError: 
-        print("Well that's just nonsense (single integer required)!")
-    if mod_order <= 0: 
-        print("Such a group does not exist")
-ints_mod(int(mod_order))
+def cayley_math(n): 
+    cayley = np.ones((n, n), dtype = int)
+    for row_ent in range(n): 
+        for col_ent in range(n): 
+            cayley[row_ent][col_ent] = (row_ent + col_ent) % n
+    return cayley
+
+# Use this function if you want the Cayley table in the form of a markdown file (automatically written). 
+def ints_mod_markdown(n):
+    if type(n) is not int: 
+        raise TypeError(f"{n} is not a valid input. Inputs must be integers.")
+    elif n <= 0: 
+        raise ValueError(f"{n} is not a valid input. Inputs must be positive integers.")
+    
+    df = pd.DataFrame(data = cayley_math(n), index = range(n), columns = range(n))
+    with open(f"Z_{n}_Cayley_Table.md", "w") as f: 
+        f.write(df.to_markdown())
