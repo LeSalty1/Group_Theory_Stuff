@@ -9,6 +9,6 @@ Largely just a collection of various scripts that relate to group theory concept
 - The first returns the Cayley table in the terminal (which may not look pretty for large $n$).
 - The second writes a markdown file which contains a proper table (much better for large $n$). 
 # Units_Group
-- A file that contains two functions, both return a Cayley table for the desired $\mathbb{Z}_n$ group.
+- A file that contains two functions, both return a Cayley table for the desired $U(n)$ group ($U(n)$ being the group of units modulo $n$).
 - The first returns the Cayley table in the terminal (which may not look pretty for large $n$). Admittedly, one can get away with larger values of $n$ than for the integers modulo $n$ group. 
 - The second writes a markdown file which contains a proper table (much better for large $n$). 
