@@ -46,5 +46,7 @@ def units_mod_markdown(n):
             cayley[row_ent][col_ent] = (elements[row_ent] * elements[col_ent]) % n
 
     df = pd.DataFrame(data = cayley, index = elements, columns = elements)
+    format_df = df.astype(str)
+    format_df.index = format_df.index.map(lambda value: f"**{value}**")
     with open(f"U({n})_Cayley_Table.md", "w") as f: 
-        f.write(df.to_markdown())
+        f.write(format_df.to_markdown())
