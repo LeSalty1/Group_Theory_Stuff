@@ -1,6 +1,6 @@
 # Group_Theory_Stuff
 Largely just a collection of various scripts that relate to group theory concepts.
-- Currently working on a script that represents the dihedral groups.
+- Currently working on a script that provides the Cayley table for the dihedral groups.
 - Progress is incremental because this is one large exercise in improving my Python skills using my existing group theory knowledge. 
 # EulerTotient
 - A file that contains a function that returns $\varphi(n)$, the Euler Totient function.
