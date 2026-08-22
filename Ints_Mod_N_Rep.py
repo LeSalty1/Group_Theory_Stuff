@@ -28,6 +28,7 @@ def ints_mod_print(n):
         print(f"{row_label:>{col_width}} | {row_str}")
 
 # Use this function if you want the Cayley table in the form of a markdown file (automatically written). 
+
 def ints_mod_markdown(n):
     if type(n) is not int: 
         raise TypeError(f"{n} is not a valid input. Inputs must be integers.")
@@ -38,7 +39,9 @@ def ints_mod_markdown(n):
     for row_ent in range(n): 
         for col_ent in range(n): 
             cayley[row_ent][col_ent] = (row_ent + col_ent) % n
-
     df = pd.DataFrame(data = cayley, index = range(n), columns = range(n))
+
+    format_df = df.astype(str)
+    format_df.index = format_df.index.map(lambda value: f"**{value}**")
     with open(f"Z_{n}_Cayley_Table.md", "w") as f: 
-        f.write(df.to_markdown())
+        f.write(format_df.to_markdown())
