@@ -9,6 +9,10 @@ def is_prime(candidate):
     return True
 
 def euler_totient(n):
+    if type(n) is not int: 
+        raise TypeError(f"{n} is not a valid input. Inputs must be positive integers.")
+    elif n <= 0: 
+        raise ValueError(f"{n} is not a valid input. Inputs must be positive integers.")
     if n == 1: 
         return 1
     if is_prime(n): 
