@@ -3,7 +3,8 @@ Largely just a collection of various scripts that relate to group theory concept
 - Currently working on a script that represents the dihedral groups.
 - Progress is incremental because this is one large exercise in improving my Python skills using my existing group theory knowledge. 
 # EulerTotient
-- A file that contains a function that returns $\varphi(n)$, the Euler Totient function. 
+- A file that contains a function that returns $\varphi(n)$, the Euler Totient function.
+- This was more as a personal exercise rather than a practical implementation given its inefficiencies (SymPy already has an equivalent and more efficient function). 
 # Ints_Mod_N
 - A file that contains two functions, both return a Cayley table for the desired $\mathbb{Z}_n$ group.
 - The first returns the Cayley table in the terminal (which may not look pretty for large $n$).
