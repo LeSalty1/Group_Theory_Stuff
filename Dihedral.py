@@ -5,12 +5,12 @@ import sympy as sp
 # rot_cap defined as order//2
 
 def dihedral_reps(n): 
-    r_var = sp.symbols('r')
+    r_var = sp.symbols("r")
     rotations = [r_var**i for i in range(1, n//2)] 
     # Our convention is that r**(order/2) represents multiplicative identity e. 
-    reflections = sp.symbols(f's1:{n//2 + 1}')
-    identity = sp.symbols('e')
-    print("Rotations:", rotations, '\n' + 
+    reflections = sp.symbols(f"s1:{n//2 + 1}")
+    identity = sp.symbols("e")
+    print("Rotations:", rotations, "\n" + 
           "Reflections:", reflections)
     
     #TO-DO: 
